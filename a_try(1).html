@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小猫bushi扫把星</title>
+    <link rel="stylesheet" type="text/css" href="a_try.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 引入 fullpage.js 的 JavaScript 文件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.min.js"></script>
+    <style>
+        .bg-image {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div style="z-index: 999;position: absolute;left: 0;top: 0;right:0;bottom:0;">
+        <div class="top_nav" style="pointer-events: none">
+            <img src="299967b9fcf18ad8b9d820267199889.png" alt="logo">
+            <ul style="pointer-events: all;">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">角色</a></li>
+                <li><a href="#">攻略</a></li>
+                <li><a href="#">世界</a></li>
+                <li><a href="#">社区</a></li>
+            </ul>
+            <div class="name">SCAT</div>
+            <button class="loadbtn" style="pointer-events: all;">超链接未定</button>
+        </div>
+        
+    </div>
+    <div>
+        <div class="bg-image" style="background-image: url('微信图片_20250227225900.jpg');"></div>
+        <div class="bg-image" style="background-image: url(41b16911107c30b86f93a470eef875f.png);"></div>
+        <div id="fullpage">
+            <div class="section"></div>
+            <div class="section"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        // 初始化 fullpage.js
+        new fullpage('#fullpage', {
+            // 滚动到某一屏后触发的回调函数
+            afterLoad: function (origin, destination, direction) {
+                // 获取所有背景图片元素
+                var bgImages = $('.bg-image');
+                // 隐藏所有背景图片
+                bgImages.css('opacity', 0);
+                // 显示当前屏对应的背景图片
+                bgImages.eq(destination.index).css('opacity', 1);
+            }
+        });
+    });
+</script>
